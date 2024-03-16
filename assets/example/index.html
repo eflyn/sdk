@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>E Suite Example App</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+    <script src="/sdk.js"></script>
+</head>
+
+<body>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-8 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal"><small>This is...</small><br>Kiosk Example App 🚀</h1>
+        <p class="lead font-weight-normal" id="subtitle">Here you'll find example scripts that you can use to build amazing things on the Kiosk Platform.</p>
+    </div>
+<!--    <div class="product-device box-shadow d-none d-md-block"></div>-->
+<!--    <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>-->
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+    <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Kiosk Printing</h2>
+            <p class="lead">You can print 80mm wide receipts using the Printer API.</p>
+        </div>
+        <button onclick="kioskPrintingExample()" class="btn btn-primary btn-lg ">Try it</button>
+        <hr>
+        <pre class="p-4 text-left" style="font-size: 1em; background: white; width: 100%; border-radius: 10px; height: 343px">
+eflyn.printer
+  .printHtml({
+    html: `
+&lt;h3&gt;Print Test&lt;/h3&gt;
+&lt;p&gt;Print real HTML here!&lt;/p&gt;
+`
+  });
+        </pre>
+    </div>
+    <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Take Payments</h2>
+            <p class="lead">You can use the paymentService API to accept payments on the pinpad.</p>
+        </div>
+        <button onclick="takePaymentsExample()" class="btn btn-primary btn-lg ">Try it</button>
+        <hr>
+        <pre class="p-4 text-left" style="font-size: 1em; background: white; width: 100%; border-radius: 10px; height: 343px">
+eflyn.payment
+  .approve({
+    amount: 5.00,
+    invoice: 'invid'
+  });
+        </pre>
+    </div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+    <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Read Barcodes</h2>
+            <p class="lead">Utilize the barcode service to listen for scan events.</p>
+        </div>
+        <button onclick="readBarcodesExample()" class="btn btn-primary btn-lg ">Try it</button>
+        <hr>
+        <pre class="p-4 text-left" style="font-size: 1em; background: white; width: 100%; border-radius: 10px; height: 343px">
+window.addEventListener(
+  'eflyn:barcode',
+  (event) =>
+    alert('Scanned: ' + event.data)
+);
+        </pre>
+    </div>
+    <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Send Notifications</h2>
+            <p class="lead">With Multi-channel notifications you can let users decide how they want to be notified.</p>
+        </div>
+        <button onclick="sendNotificationsExample()" class="btn btn-light btn-lg ">Try it</button>
+        <hr>
+        <pre class="p-4 text-left" style="font-size: 1em; background: white; width: 100%; border-radius: 10px; height: 343px">
+eflyn.receipt.submit({
+  name: 'Example Notification',
+  email: null,
+  print: testReceiptHtml,
+});
+        </pre>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

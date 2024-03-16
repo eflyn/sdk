@@ -1,0 +1,52 @@
+:root {
+    --dark-color-background: #111;
+    --dark-color-background-secondary: #222;
+}
+
+.tsd-page-title {
+    display: none;
+}
+
+.tsd-generator {
+    display: none;
+}
+
+html[data-theme="dark"] a[class="title"] {
+    color: #222;
+}
+html[data-theme="dark"] a[class="title"]:after {
+    content: '';
+    background-image: url(../assets/eflyn-logo-white.png);
+    width: 310px;
+    height: 16px;
+    display: block;
+    top: -3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #111;
+    position: absolute;
+    margin: 5px 0;
+}
+
+
+html[data-theme="light"] a[class="title"] {
+    color: #eff0f1;
+}
+html[data-theme="light"] a[class="title"]:after {
+    content: '';
+    background-image: url(../assets/eflyn-logo-dark.png);
+    width: 310px;
+    height: 16px;
+    display: block;
+    top: -3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #111;
+    position: absolute;
+    margin: 5px 0px;
+}
+
+
+.tsd-page-toolbar {
+    border-bottom: none;
+}
